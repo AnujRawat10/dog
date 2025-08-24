@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface HeroSectionProps {
   onBgColorChange: (color: string) => void;
@@ -46,11 +47,11 @@ export default function HeroSection({ onBgColorChange }: HeroSectionProps) {
       setCurrentBgIndex((prev) => (prev + 1) % heroBackgrounds.length);
     }, 5000); // Perfect 5-second timing to match 25% intervals in 20s animation
     return () => clearInterval(interval);
-  }, []);
+  }, [heroBackgrounds.length]);
 
   useEffect(() => {
     onBgColorChange(heroBackgrounds[currentBgIndex].bgColor);
-  }, [currentBgIndex, onBgColorChange]);
+  }, [currentBgIndex, onBgColorChange, heroBackgrounds]);
 
   const currentBg = heroBackgrounds[currentBgIndex];
 
@@ -213,12 +214,14 @@ export default function HeroSection({ onBgColorChange }: HeroSectionProps) {
                       opacity: visibility,
                       transition:
                         "all 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Smoother easing
+                      position: "relative",
                     }}
                   >
-                    <img
+                    <Image
                       src={bg.image}
                       alt={bg.alt}
-                      className='w-full h-full object-cover rounded-full'
+                      fill
+                      className='object-cover rounded-full'
                       style={{
                         transition:
                           "all 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94)", // Smoother easing
