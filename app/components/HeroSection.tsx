@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 
 interface HeroSectionProps {
@@ -10,36 +10,39 @@ interface HeroSectionProps {
 export default function HeroSection({ onBgColorChange }: HeroSectionProps) {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
-  const heroBackgrounds = [
-    {
-      bgColor: "#e0ce8a", // Warm golden yellow
-      image: "/dogs/d1.avif",
-      alt: "Black and white cat on golden background",
-      textColor: "text-gray-800",
-      heading: "furvourite",
-    },
-    {
-      bgColor: "#9acbda", // Soft blue
-      image: "/dogs/d2.avif",
-      alt: "Playful jumping dog",
-      textColor: "text-gray-800",
-      heading: "meowelous",
-    },
-    {
-      bgColor: "#e3b3c3", // Soft pink
-      image: "/dogs/d3.avif",
-      alt: "Dog in sweater",
-      textColor: "text-gray-800",
-      heading: "purrfect",
-    },
-    {
-      bgColor: "#98cbbc", // Mint green
-      image: "/dogs/d4.avif",
-      alt: "Gray and white cat on mint background",
-      textColor: "text-gray-800",
-      heading: "pawsome",
-    },
-  ];
+  const heroBackgrounds = useMemo(
+    () => [
+      {
+        bgColor: "#e0ce8a", // Warm golden yellow
+        image: "/dogs/d1.avif",
+        alt: "Black and white cat on golden background",
+        textColor: "text-gray-800",
+        heading: "furvourite",
+      },
+      {
+        bgColor: "#9acbda", // Soft blue
+        image: "/dogs/d2.avif",
+        alt: "Playful jumping dog",
+        textColor: "text-gray-800",
+        heading: "meowelous",
+      },
+      {
+        bgColor: "#e3b3c3", // Soft pink
+        image: "/dogs/d3.avif",
+        alt: "Dog in sweater",
+        textColor: "text-gray-800",
+        heading: "purrfect",
+      },
+      {
+        bgColor: "#98cbbc", // Mint green
+        image: "/dogs/d4.avif",
+        alt: "Gray and white cat on mint background",
+        textColor: "text-gray-800",
+        heading: "pawsome",
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {

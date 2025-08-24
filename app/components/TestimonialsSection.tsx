@@ -51,8 +51,8 @@ export default function TestimonialsSection() {
             trusted by humans, loved by pets
           </h2>
           <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
-            Don't just take our word for it - here's what our pet parents have
-            to say about our services.
+            Don&apos;t just take our word for it - here&apos;s what our pet
+            parents have to say about our services.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
 
               {/* Quote */}
               <blockquote className='text-gray-700 mb-6 leading-relaxed italic'>
-                "{testimonial.quote}"
+                &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
               {/* Author */}

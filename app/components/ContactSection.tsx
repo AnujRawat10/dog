@@ -67,8 +67,8 @@ export default function ContactSection() {
 
             <p className='text-lg text-gray-600 leading-relaxed'>
               Ready to give your pet the best care possible? Get in touch with
-              us today and let's discuss how we can help your furry friend live
-              their happiest, healthiest life.
+              us today and let&apos;s discuss how we can help your furry friend
+              live their happiest, healthiest life.
             </p>
           </div>
 
@@ -209,7 +209,7 @@ export default function ContactSection() {
               {formStatus === "success" && (
                 <div className='bg-green-50 border border-green-200 rounded-xl p-4 text-green-700'>
                   <strong>Success!</strong> Thank you! Your submission has been
-                  received. We'll get back to you soon!
+                  received. We&apos;ll get back to you soon!
                 </div>
               )}
 
